@@ -1,0 +1,26 @@
+
+────────────────────────────────────────────────────────────
+STEP 5 • Visualization & Logging Demo (Multi-Authority)
+────────────────────────────────────────────────────────────
+[AUTH] Both authorities generated ECC key pairs ✅
+[USER] User now holds 2 verified certs ✅
+[CLOUD] Performing attribute verification...
+
+────────────────────────────────────────────────────────────
+FINAL SUMMARY
+────────────────────────────────────────────────────────────
+{
+  "Authorities": [
+    "DeptAuthority",
+    "RoleAuthority"
+  ],
+  "User ID": "userX",
+  "Attributes Verified": [
+    "dept:power",
+    "role:engineer"
+  ],
+  "Access Result": "\u2705 Granted",
+  "Plaintext": "Confidential Industrial IoT Data (from Cloud)",
+  "Timestamp": "2025-11-04 23:10:03.374689"
+}
+[REPORT] Full log saved to: logs/demo_run.txt
