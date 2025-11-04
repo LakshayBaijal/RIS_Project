@@ -2,7 +2,7 @@
 
 [Screencast from 2025-11-05 02-30-46.webm](https://github.com/user-attachments/assets/3eb321b1-cfb3-425a-89e1-55130421acae)
 
-## Run every command in different terminal
+## Run every command in different terminal in Implementation Folder
 
 - Issues department based certificates
 
