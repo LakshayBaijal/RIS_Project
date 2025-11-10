@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "curve": "secp256r1",
+    "n_attrs": 3,
+    "threshold": 3,
+    "attributes_ordered": [
+      "SA_Finance.attrA",
+      "SA_IT.attrC",
+      "SA_Finance.attrB"
+    ]
+  },
+  "P_bytes_b64": "DDa14/aOg3ksThegoHabQPhqwiL0Pu8qJBAj7drSIWWABxB+y6GZHilpJD4XRBWTCOmEuRze/hPKnbThvtIkNw==",
+  "aes": {
+    "nonce_b64": "vod6z0RsRXkiJ3Bo",
+    "ct_b64": "aTrXBlbI2W4kCOr3rNWj8j0YQw7d3EPpruYcQGuk658NSM1e25HujGzi+SKN7dyJxZtlP25D1FKyxNqdcf2EXpnUnWAodig3cA=="
+  },
+  "ct_id": "8f1fd7b2-72ad-4979-8caa-ae7f91aed63c"
+}

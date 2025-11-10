@@ -1,0 +1,12 @@
+{
+  "info": {
+    "curve": "secp256r1",
+    "n_shares": 5,
+    "threshold": 3
+  },
+  "P_bytes_b64": "kYuIWK1bJXBIDJNYK5c6bb7IVflxTlrLFjJ9OhriUffqtHQLWmmGHnjKZDfFcFXpd8rWrgfiQ8OeTM+Eb8vbyA==",
+  "aes": {
+    "nonce_b64": "B9lsfFg8bQWkB1ak",
+    "ct_b64": "vAv55CSIJQ+MxjW9nv4UqtkXH6sVZYFiy5j63g9WQJTG+6LRmJQhSpad5LX/adCkuDJv8VhV4k2OVZa1X3mYN3d5"
+  }
+}

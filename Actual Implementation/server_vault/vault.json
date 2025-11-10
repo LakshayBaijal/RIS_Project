@@ -1,0 +1,205 @@
+{
+  "b9b4e4d7-aaa6-45a1-9460-95be08a137de": {
+    "meta": {
+      "curve": "secp256r1",
+      "n_attrs": 3,
+      "threshold": 3,
+      "attributes_ordered": [
+        "attrA",
+        "attrC",
+        "attrB"
+      ]
+    },
+    "shares": {
+      "attrA": {
+        "owner": "AA1",
+        "index": 1,
+        "share_hex": "0xf3dc5d138093e1cac4538b9ea7183808caace77f999fa2ae312b3ca8c39cc0fd"
+      },
+      "attrC": {
+        "owner": "AA2",
+        "index": 2,
+        "share_hex": "0x2775d45b208af1c0a5e1370d8c470580a8c3eaafcb96584294aaa4c1658aa2c9"
+      },
+      "attrB": {
+        "owner": "AA1",
+        "index": 3,
+        "share_hex": "0x220dfd162a51997144fb8b599b5506f103318a6d4db68536f7f92a297d6160e1"
+      }
+    }
+  },
+  "13ca8bb5-359a-46fc-a649-a9e981391527": {
+    "meta": {
+      "curve": "secp256r1",
+      "n_attrs": 3,
+      "threshold": 3,
+      "attributes_ordered": [
+        "attrA",
+        "attrC",
+        "attrB"
+      ]
+    },
+    "shares": {
+      "attrA": {
+        "owner": "AA1",
+        "index": 1,
+        "share_hex": "0x61077c3492f6ce699233d1d57b118662d05283eb82b181b864f16af216c083ea"
+      },
+      "attrC": {
+        "owner": "AA2",
+        "index": 2,
+        "share_hex": "0xf15bbdaf3f654565f63873c63b87979e8d28938a05b0f07b7e5211d1f1c356b3"
+      },
+      "attrB": {
+        "owner": "AA1",
+        "index": 3,
+        "share_hex": "0x125450faab7cfdebe181c581cecdbd2529af89e75b972501853710adb943887c"
+      }
+    }
+  },
+  "4bae52cb-73a2-4f1b-8b80-2a7d84e5d87e": {
+    "meta": {
+      "curve": "secp256r1",
+      "n_attrs": 3,
+      "threshold": 3,
+      "attributes_ordered": [
+        "attrA",
+        "attrC",
+        "attrB"
+      ]
+    },
+    "shares": {
+      "attrA": {
+        "owner": "AA1",
+        "index": 1,
+        "share_hex": "0x320d03da25b535d795598ef509e0f21e49ee4810474db940336c6a80e53db812"
+      },
+      "attrC": {
+        "owner": "AA2",
+        "index": 2,
+        "share_hex": "0xe1e515effd5ce352ec528b1bd8023586ccbd40c01752bea4bcf4c0cc67cd0821"
+      },
+      "attrB": {
+        "owner": "AA1",
+        "index": 3,
+        "share_hex": "0x8e4a08b96b16b44f5293b2236601b4af08cd3a5ec6d088f47aca3ee163c716a1"
+      }
+    }
+  },
+  "9a2be826-c5a4-4f66-a9c5-cf8f548f2d9e": {
+    "meta": {
+      "curve": "secp256r1",
+      "n_attrs": 3,
+      "threshold": 3,
+      "attributes_ordered": [
+        "attrA",
+        "attrC",
+        "attrB"
+      ]
+    },
+    "shares": {
+      "attrA": {
+        "owner": "AA1",
+        "index": 1,
+        "share_hex": "0xd9a0da00557e1bc6ca2279e3ec452d0341dd862f5a9180bf643c33d464149b4a"
+      },
+      "attrC": {
+        "owner": "AA2",
+        "index": 2,
+        "share_hex": "0xa0d57b479bff9209d75f058a59dc8bc4ca194c7734d3064453f0209794f27029"
+      },
+      "attrB": {
+        "owner": "AA1",
+        "index": 3,
+        "share_hex": "0x7844b48ac2a7e72eb13e4ace5d6db45ccbc09687f4ea12a6788cd5075edca732"
+      }
+    }
+  },
+  "882a800b-2b51-482b-970b-e406014313ba": {
+    "meta": {
+      "curve": "secp256r1",
+      "n_attrs": 3,
+      "threshold": 3,
+      "attributes_ordered": [
+        "attrA",
+        "attrC",
+        "attrB"
+      ]
+    },
+    "shares": {
+      "attrA": {
+        "owner": "AA1",
+        "index": 1,
+        "share_hex": "0x8b873ac483be9e79cc57d40e7888337d89c9405eb31a81250944caf4dd454d95"
+      },
+      "attrC": {
+        "owner": "AA2",
+        "index": 2,
+        "share_hex": "0xd1ed3270c8f23282142c4b68b624e6debbb6ae52bf23e60213bdf7e8afa7fae"
+      },
+      "attrB": {
+        "owner": "AA1",
+        "index": 3,
+        "share_hex": "0xae305b10d30b7317416030240a375af1d12095db99cd1c47ef11d1027ba16656"
+      }
+    }
+  },
+  "787d85cf-2665-4b0b-a457-4572e18f5a10": {
+    "meta": {
+      "curve": "secp256r1",
+      "n_attrs": 3,
+      "threshold": 3,
+      "attributes_ordered": [
+        "attrA",
+        "attrC",
+        "attrB"
+      ]
+    },
+    "shares": {
+      "attrA": {
+        "owner": "AA1",
+        "index": 1,
+        "share_hex": "0x4120be2890e107888747ea689e8fe51ba060137256f843479637fe074b9d1f9d"
+      },
+      "attrC": {
+        "owner": "AA2",
+        "index": 2,
+        "share_hex": "0xa85dcf2907befde93441839eadde5176f0477272859b2a2346b074a1f70098aa"
+      },
+      "attrB": {
+        "owner": "AA1",
+        "index": 3,
+        "share_hex": "0xbd024ebdb30c87e8d758edf13953fc68e3aee845a0e95f6b6a6564b7354e737e"
+      }
+    }
+  },
+  "12b5c960-9fd5-4bb8-9bbf-55fccd743f2d": {
+    "meta": {
+      "curve": "secp256r1",
+      "n_attrs": 3,
+      "threshold": 3,
+      "attributes_ordered": [
+        "attrA",
+        "attrC",
+        "attrB"
+      ]
+    },
+    "shares": {
+      "attrA": {
+        "owner": "AA1",
+        "index": 1,
+        "share_hex": "0x83bec2e1d3d0edaa80134478c068691a130bd6a1eaba13078f3bace98fd43431"
+      },
+      "attrC": {
+        "owner": "AA2",
+        "index": 2,
+        "share_hex": "0x951dd6e4b7230428fb7f412073e33e76384d37ff368c41c34fe8e27368593696"
+      },
+      "attrB": {
+        "owner": "AA1",
+        "index": 3,
+        "share_hex": "0x638907746bbfcfcc01b4a9df28aac8822bec4ac7b1736d92438b801459868d4e"
+      }
+    }
+  }
+}

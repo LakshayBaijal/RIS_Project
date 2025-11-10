@@ -1,0 +1,16 @@
+# --- Core crypto & math ---
+ecpy==1.2.5                    # ECC operations (replaces tinyec)
+cryptography==42.0.5           # AES-GCM symmetric encryption
+pycryptodome==3.21.0           # optional crypto primitives
+
+# --- Data handling ---
+numpy==1.26.4
+pandas==2.2.3
+
+# --- For future extensions (LSSS, attacks, graphs) ---
+matplotlib==3.9.2
+networkx==3.3
+
+# --- Development helpers ---
+pytest==8.3.3
+python-dotenv==1.0.1

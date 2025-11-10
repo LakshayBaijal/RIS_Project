@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "curve": "secp256r1",
+    "n_attrs": 3,
+    "threshold": 3,
+    "attributes_ordered": [
+      "attrA",
+      "attrC",
+      "attrB"
+    ]
+  },
+  "P_bytes_b64": "blQL3dW/sntj4Yd+byLf5lx7AwavmhJhf8fc7BMCdzhkcvHH7JnWXJk5S+O4jf9U1KDpC8hZmVzultx8Z4bHKQ==",
+  "aes": {
+    "nonce_b64": "7N7U1A44XreoQL9K",
+    "ct_b64": "y6q4vosXicA33vdBcpzstllHymfrwvGRd/75dhav5d7rgrI9jIx/pi+1se950gqwmdDQlYurUQ4bqajPXlSl"
+  },
+  "ct_id": "12b5c960-9fd5-4bb8-9bbf-55fccd743f2d"
+}

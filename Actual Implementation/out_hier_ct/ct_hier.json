@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "curve": "secp256r1",
+    "n_attrs": 3,
+    "threshold": 3,
+    "attributes_ordered": [
+      "SA_Finance.attrA",
+      "SA_IT.attrC",
+      "SA_Finance.attrB"
+    ]
+  },
+  "P_bytes_b64": "DDa14/aOg3ksThegoHabQPhqwiL0Pu8qJBAj7drSIWWABxB+y6GZHilpJD4XRBWTCOmEuRze/hPKnbThvtIkNw==",
+  "aes": {
+    "nonce_b64": "vod6z0RsRXkiJ3Bo",
+    "ct_b64": "aTrXBlbI2W4kCOr3rNWj8j0YQw7d3EPpruYcQGuk658NSM1e25HujGzi+SKN7dyJxZtlP25D1FKyxNqdcf2EXpnUnWAodig3cA=="
+  },
+  "shares": {
+    "SA_Finance.attrA": {
+      "owner": "SA_Finance",
+      "index": 1,
+      "share_hex": "0x21ccacae5610469163a099e7dbfc74d33599cac51247f1c8600720e18d9ac60e"
+    },
+    "SA_IT.attrC": {
+      "owner": "SA_IT",
+      "index": 2,
+      "share_hex": "0x7d6063d03a67ce65f06f6f45786c98c67e331326572c89c23ba3b1d73e1f030f"
+    },
+    "SA_Finance.attrB": {
+      "owner": "SA_Finance",
+      "index": 3,
+      "share_hex": "0x28001ee4cbce6a460959488ba77cc4bb22d31d5eae2c652c4d881ef8ce987702"
+    }
+  }
+}
