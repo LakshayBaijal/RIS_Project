@@ -4,7 +4,142 @@
 ### Execution
 https://github.com/user-attachments/assets/3fbe36ed-da62-4d7f-add3-206eeeeae9ae
 
+### Link to Report
+```br
+https://github.com/LakshayBaijal/RIS_Project/blob/main/RIS_Project.pdf
+```
+```br
+https://github.com/LakshayBaijal/RIS_Project/blob/main/PPT.pdf
+```
 
+### Directory Structure
+```br
+.
+├── attacker_demo_presentation.sh
+├── attacker_local_output
+│   ├── log.txt
+│   └── recovered.txt
+├── attacker_local.sh
+├── attacker_presentation_with_save.sh
+├── benchmark_performance_graphs.py
+├── demo.txt
+├── ea_predecrypt.sh
+├── edge_registry
+│   ├── user_pub.json
+│   └── user_secret_demo.json
+├── Image_Upload.png
+├── local_rehearse_demo.sh
+├── multi_aa_encrypt_file.sh
+├── normal_access_demo.sh
+├── one_click_multi_aa_upload_demo.sh
+├── out_ct
+│   ├── ct.json
+│   └── shares
+│       ├── share_1.json
+│       ├── share_2.json
+│       ├── share_3.json
+│       ├── share_4.json
+│       └── share_5.json
+├── out_hier_ct
+│   ├── ct_hier.json
+│   ├── ct_hier_stripped.json
+│   ├── transform_revoked.json
+│   └── transform_token_fake.json
+├── out_multi_ct
+│   ├── ct_multi.json
+│   ├── ct_multi_stripped.json
+│   ├── decrypted_transform.txt
+│   ├── decrypted.txt
+│   ├── pre_token.json
+│   └── transform_token.json
+├── pack_vault_and_strip.sh
+├── performance_graph.png
+├── performance_log.csv
+├── README.md
+├── requirements.txt
+├── server_vault
+│   ├── revocation.json
+│   ├── vault_hier.json
+│   └── vault.json
+├── src
+│   ├── aa
+│   │   ├── authority.py
+│   │   ├── hierarchy.py
+│   │   └── __pycache__
+│   │       ├── authority.cpython-312.pyc
+│   │       └── hierarchy.cpython-312.pyc
+│   ├── attacks
+│   │   ├── attacker_fetch_and_crack.py
+│   │   └── __pycache__
+│   │       └── attacker_fetch_and_crack.cpython-312.pyc
+│   ├── crypto
+│   │   ├── ecc.py
+│   │   ├── __pycache__
+│   │   │   ├── ecc.cpython-312.pyc
+│   │   │   └── sym.cpython-312.pyc
+│   │   └── sym.py
+│   ├── edge
+│   │   ├── edge_stub.py
+│   │   ├── predecrypt.py
+│   │   ├── pretransform_elgamal.py
+│   │   └── __pycache__
+│   │       ├── edge_stub.cpython-312.pyc
+│   │       ├── predecrypt.cpython-312.pyc
+│   │       └── pretransform_elgamal.cpython-312.pyc
+│   ├── encrypt
+│   │   ├── multi_aa_encryptor.py
+│   │   └── __pycache__
+│   │       └── multi_aa_encryptor.cpython-312.pyc
+│   ├── lsss
+│   │   ├── __pycache__
+│   │   │   └── shamir.cpython-312.pyc
+│   │   └── shamir.py
+│   ├── tools
+│   │   ├── aa_demo.py
+│   │   ├── encryptor_demo.py
+│   │   ├── hierarchical_attack_tests.py
+│   │   ├── hierarchical_encrypt_demo.py
+│   │   ├── hierarchical_full_chain_demo.py
+│   │   ├── hierarchy_demo.py
+│   │   ├── multi_aa_encrypt_demo.py
+│   │   ├── __pycache__
+│   │   │   ├── aa_demo.cpython-312.pyc
+│   │   │   ├── encryptor_demo.cpython-312.pyc
+│   │   │   ├── hierarchical_attack_tests.cpython-312.pyc
+│   │   │   ├── hierarchical_encrypt_demo.cpython-312.pyc
+│   │   │   ├── hierarchy_demo.cpython-312.pyc
+│   │   │   ├── multi_aa_encrypt_demo.cpython-312.pyc
+│   │   │   ├── revocation_rekey_demo.cpython-312.pyc
+│   │   │   ├── shamir_demo.cpython-312.pyc
+│   │   │   ├── share_vault_pack.cpython-312.pyc
+│   │   │   ├── sym_demo.cpython-312.pyc
+│   │   │   ├── tskt_demo.cpython-312.pyc
+│   │   │   ├── user_finish_decrypt.cpython-312.pyc
+│   │   │   ├── user_finish_transform_decrypt.cpython-312.pyc
+│   │   │   └── victim_export.cpython-312.pyc
+│   │   ├── revocation_rekey_demo.py
+│   │   ├── shamir_demo.py
+│   │   ├── share_vault_pack.py
+│   │   ├── sym_demo.py
+│   │   ├── tskt_demo.py
+│   │   ├── user_finish_decrypt.py
+│   │   ├── user_finish_transform_decrypt.py
+│   │   └── victim_export.py
+│   └── user
+│       ├── __pycache__
+│       │   └── user.cpython-312.pyc
+│       └── user.py
+├── upload_benchmark_1000KB.txt
+├── upload_benchmark_100KB.txt
+├── upload_benchmark_10KB.txt
+├── upload_benchmark_1KB.txt
+├── upload_benchmark_500KB.txt
+├── upload_demo.txt
+├── user_finish_decrypt_and_present.sh
+├── user_interactive_fetch.sh
+├── victim_demo_presentation.sh
+└── victim_server_presentable.py
+```
 
 ### Demo Commands
 ```br
