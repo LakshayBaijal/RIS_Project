@@ -289,10 +289,10 @@ python -m src.edge.predecrypt \
 ```
 
 # Theory
-▶ The Industrial Internet of Things (IIoT) connects thousands of devices
+The Industrial Internet of Things (IIoT) connects thousands of devices
 and sensors that continuously share sensitive operational data.
 
-▶ Ensuring secure, fine-grained, and scalable access control is a
+Ensuring secure, fine-grained, and scalable access control is a
 major challenge due to limited device resources.
 
 ### Traditional solutions:
@@ -374,7 +374,7 @@ Programming Language and Environment:
 
 ### Cryptosystem Overview: Motivation & Design Choice
 
-Why ECC-based Cryptosystem?
+### Why ECC-based Cryptosystem?
 
 ▶ Traditional ABE schemes rely on pairing-based cryptography (e.g., bilinear
 maps).
@@ -388,7 +388,7 @@ sizes:
 
 ▶ Fewer modular multiplications → faster and energy-efficient.
 
-Why Multi-Authority Hierarchy?
+### Why Multi-Authority Hierarchy?
 
 ▶ Prevents single-point trust failure.
 
@@ -396,9 +396,245 @@ Why Multi-Authority Hierarchy?
 
 ▶ Enables scalable and distributed key management.
 
-Cryptographic Components Used:
+### Cryptographic Components Used:
 
 1. ECC (secp256r1) — public key generation, ElGamal transform.
 2. AES-GCM — fast symmetric encryption of data.
 3. Shamir’s Secret Sharing — enforces attribute-based access threshold.
 4. SHA-256 — deterministic key derivation from EC points.
+
+### Cryptosystem Overview: ECC and Key Generation
+
+### Elliptic Curve Cryptography (ECC):
+
+▶ Curve used: secp256r1.
+
+▶ Group operation: point addition and scalar multiplication over finite field.
+
+▶ Base point G acts as generator for key derivation.
+
+### Key Generation:
+
+Private key: x ∈R [1, n − 1],
+
+Public key: P = xG
+
+▶ Each authority (AA) and user generates ECC key pairs.
+
+▶ Root Authority distributes trust by delegating xi values to sub-authorities.
+
+### Advantages over RSA/Pairing Schemes:
+
+▶ Smaller key sizes reduce computation time and bandwidth.
+
+▶ Compatible with lightweight IoT processors.
+
+▶ Secure under the Elliptic Curve Discrete Logarithm Problem (ECDLP).
+
+## Implementation:
+
+▶ ecpy.curves.Curve.get curve(’secp256r1’)
+
+▶ Functions: scalar mul(k,P), point add(P,Q), hash to int(data).
+
+Cryptosystem Overview: AES-GCM and Key
+
+## Derivation
+
+### Why AES-GCM?
+
+▶ Provides both confidentiality and integrity.
+
+▶ Authenticated encryption mode prevents tampering.
+
+
+▶ GCM is faster and parallelizable compared to CBC or CFB modes.
+
+### Key Derivation from ECC:
+
+▶ Instead of random AES keys, derive it deterministically from EC point sG.
+
+
+K = SHA256(point to bytes(sG))
+
+▶ Ensures both encryptor and decryptor obtain identical AES key using shared scalar s.
+
+
+### Encryption Process:
+
+1. Choose random scalar s.
+
+2. Derive AES key K from sG.
+
+3. Encrypt plaintext using:
+
+AESGCM(K ).encrypt(nonce, plaintext)
+
+4. Output {nonce, ct, P bytes b64}.
+
+### Decryption:
+
+▶ Compute same sG at receiver side.
+
+▶ Re-derive K = H(sG) and decrypt using AES-GCM.
+
+Cryptosystem Overview: Shamir’s Secret Sharing &
+ElGamal Transform
+
+### Shamir’s Secret Sharing (SSS):
+
+▶ Used to distribute scalar s among n attributes.
+
+▶ Secret polynomial: f (x) = s + a1 x + a2 x 2 + · · · + at−1 x t−1 .
+
+▶ Each attribute receives a share (xi , f (xi )).
+
+▶ Threshold property: any t shares can reconstruct s.
+
+### Why Shamir’s Scheme?
+
+▶ Linear operations — easy to implement over Zp .
+
+▶ Supports dynamic threshold adjustment (e.g., t = 3 of 5 attributes).
+
+### ElGamal-Based Edge Transformation:
+
+▶ Edge Authority (EA) helps decrypt without learning s.
+
+C1 = rG,
+
+C2 = sG + rDpub
+
+▶ User derives:
+
+sG = C2 − dC1
+
+▶ This blinded transformation allows lightweight user decryption.
+
+### Security:
+
+▶ EA never learns d or K .
+
+▶ Resistant to replay and collusion due to threshold reconstruction.
+
+Workflow 1: Multi-Authority Encryption
+
+1. Attribute Assignment: Each attribute (e.g., attrA, attrC) is managed by its
+own Attribute Authority (AA).
+
+2. Secret Sharing: A random scalar s is generated and divided into n shares using
+Shamir’s (n, t) scheme.
+
+3. Share Distribution: Each share is tagged with its corresponding attribute and
+owner AA.
+
+4. Ciphertext Generation:
+
+▶ Compute P = sG and derive AES key K = H(P).
+
+▶ Encrypt data with AES-GCM → produces (nonce, ct).
+
+5. Vault Creation: All attribute shares are stored in a secure vault.json.
+
+### Workflow 2: Edge-Assisted Decryption (EA Transform)
+
+
+1. EA Pre-Decrypt:
+
+▶ EA verifies user’s authorized attributes.
+
+▶ Fetches corresponding shares from vault.json.
+
+▶ Reconstructs or blinds s (depending on threshold policy).
+
+2. ElGamal-Based Transformation:
+
+C1 = rG,
+
+C2 = sG + rDpub
+
+▶ EA sends (C1 , C2 ) as a transform token to the user.
+
+3. User Final Decryption:
+
+sG = C2 − dC1 ,
+
+K = H(sG)
+
+▶ User derives K and decrypts AES-GCM ciphertext to recover
+original data.
+
+## Threat Model & Security Mechanisms
+
+
+1. Collusion Attack:
+
+▶ Unauthorized users may try to combine their shares.
+
+▶ Prevented by Shamir’s threshold t: fewer than t shares reveal nothing.
+
+2. Malicious Edge Authority:
+
+▶ EA cannot recover AES key since it lacks user secret d.
+
+▶ ElGamal transformation ensures s remains hidden.
+
+3. Key Exposure Attack:
+
+▶ Even if transformed keys (TSKs) are leaked, they depend on d.
+
+4. Integrity & Authenticity:
+
+▶ AES-GCM provides built-in authentication.
+
+▶ Any ciphertext tampering causes decryption failure.
+
+
+## Performance & Results
+
+
+### Benchmark Setup:
+
+▶ Measured runtime for ECC scalar multiplication and AES-GCM encryption.
+
+▶ System: Intel i7 CPU, Python 3.12, ECPy (secp256r1).
+
+### Results:
+
+▶ ECC operations scale linearly with the number of keys (up to 1000 ops).
+
+▶ AES-GCM overhead is minimal (<2 ms for 1 MB files).
+
+▶ Our ECC-based scheme reduces total computation by 60–70% vs pairing-based
+CP-ABE.
+
+- ECC vs AES-GCM runtime on increasing workload.
+<img width="927" height="606" alt="image" src="https://github.com/user-attachments/assets/1b2db47b-6cd6-4649-a3ee-b7a433bd19dc" />
+
+- ECC CP-ABE Performance on IIoT Simulation — Measured encryption, edge pre-decrpytion
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/eee7195d-88bf-4b6d-8915-8a763bd960ca" />
+
+
+## Conclusion & Future Work
+
+### Summary:
+
+▶ Implemented an ECC-based Multi-Authority Hierarchical
+CP-ABE system.
+
+▶ Enabled lightweight access control for Industrial IoT.
+
+▶ Edge-assisted decryption offloads computation from constrained
+
+devices.
+
+### Future Research Directions:
+
+▶ Efficient attribute revocation and key updates.
+
+▶ Integration with real IoT hardware (e.g., Raspberry Pi).
+
+▶ Lattice-based or post-quantum cryptography for resilience.
+
+▶ Formal proofs of security under standard assumptions.
+
