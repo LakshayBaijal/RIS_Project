@@ -288,22 +288,21 @@ python -m src.edge.predecrypt \
   --out out_multi_ct/pre_token.json
 ```
 
-## Theory
-### Introduction
+# Theory
 ▶ The Industrial Internet of Things (IIoT) connects thousands of devices
 and sensors that continuously share sensitive operational data.
 
 ▶ Ensuring secure, fine-grained, and scalable access control is a
 major challenge due to limited device resources.
 
-- Traditional solutions:
+### Traditional solutions:
 
 ▶ Centralized access control → single point of failure.
 
 ▶ Pairing-based CP-ABE → computationally expensive for embedded
 nodes.
 
-- Our approach:
+### Our approach:
 
 ▶ A lightweight ECC-based Multi-Authority CP-ABE system.
 
@@ -314,3 +313,92 @@ Sub-Authorities → AAs).
 without compromising privacy.
 
 ▶ Designed specifically for resource-constrained IIoT deployments.
+
+## Motivation
+▶ Challenge 1: Heavy Computation in IoT Devices
+
+Most ABE systems rely on pairing-based cryptography, requiring high
+CPU cycles and memory — unsuitable for embedded systems.
+
+▶ Challenge 2: Centralized Trust Model
+
+A single authority managing all attributes leads to bottlenecks, privacy
+risks, and poor scalability across organizations.
+
+▶ Challenge 3: Real-Time Decryption Demand
+
+Industrial sensors need quick access verification without offloading full
+decryption load to cloud or central servers.
+
+▶ Use Elliptic Curve Cryptography (ECC) for efficiency — smaller
+keys, faster scalar operations.
+
+▶ Employ Multi-Authority (MA) hierarchy to distribute attribute
+management.
+
+▶ Introduce Edge-Assisted Decryption to offload heavy
+computation securely.
+
+## Technology Stack & Tools
+Programming Language and Environment:
+
+▶ Implemented entirely in Python 3.12.
+
+▶ Virtual environment managed using venv.
+
+### Core Cryptographic Libraries:
+
+▶ ECPy — for Elliptic Curve Cryptography on secp256r1.
+
+▶ cryptography — AES-GCM encryption and decryption.
+
+▶ hashlib — SHA-256 for key derivation.
+
+### Mathematical Components:
+
+▶ Shamir’s Secret Sharing implemented for attribute-based threshold enforcement.
+
+▶ Elliptic curve arithmetic for scalar multiplication and point addition.
+
+### Data Handling & Analysis:
+
+▶ numpy, pandas, and matplotlib for performance benchmarks.
+
+▶ networkx for future access-structure visualization.
+
+### Execution Scripts:
+
+▶ Automated demo: one click multi aa upload demo.sh
+
+▶ Performance test: benchmarks/perf benchmark.py
+
+### Cryptosystem Overview: Motivation & Design Choice
+
+Why ECC-based Cryptosystem?
+
+▶ Traditional ABE schemes rely on pairing-based cryptography (e.g., bilinear
+maps).
+
+▶ Pairings are computationally heavy for IoT or edge devices.
+
+▶ Elliptic Curve Cryptography (ECC) offers equivalent security at smaller key
+sizes:
+
+▶ 256-bit ECC 3072-bit RSA in strength.
+
+▶ Fewer modular multiplications → faster and energy-efficient.
+
+Why Multi-Authority Hierarchy?
+
+▶ Prevents single-point trust failure.
+
+▶ Each Sub-Authority manages distinct attributes (domain-wise, e.g., Finance, IT).
+
+▶ Enables scalable and distributed key management.
+
+Cryptographic Components Used:
+
+1. ECC (secp256r1) — public key generation, ElGamal transform.
+2. AES-GCM — fast symmetric encryption of data.
+3. Shamir’s Secret Sharing — enforces attribute-based access threshold.
+4. SHA-256 — deterministic key derivation from EC points.
