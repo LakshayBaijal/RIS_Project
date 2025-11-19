@@ -287,3 +287,21 @@ python -m src.edge.predecrypt \
   --attrs attrA,attrC,attrB \
   --out out_multi_ct/pre_token.json
 ```
+
+## Theory
+### Introduction
+▶ The Industrial Internet of Things (IIoT) connects thousands of devices
+and sensors that continuously share sensitive operational data.
+▶ Ensuring secure, fine-grained, and scalable access control is a
+major challenge due to limited device resources.
+▶ Traditional solutions:
+▶ Centralized access control → single point of failure.
+▶ Pairing-based CP-ABE → computationally expensive for embedded
+nodes.
+▶ Our approach:
+▶ A lightweight ECC-based Multi-Authority CP-ABE system.
+▶ Integrates a hierarchical trust model (Root Authority →
+Sub-Authorities → AAs).
+▶ Employs an Edge Authority (EA) for partial decryption assistance
+without compromising privacy.
+▶ Designed specifically for resource-constrained IIoT deployments.
